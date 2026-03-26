@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(grep -E \"\\(\\\\.php|\\\\.json|\\\\.blade\\\\.php|\\\\.js|\\\\.scss\\)$\")",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(composer show:*)"
     ]
   }
 }

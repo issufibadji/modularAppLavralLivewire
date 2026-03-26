@@ -2,8 +2,9 @@
 
 namespace Modules\Core\Providers;
 
+use Livewire\Livewire;
+use Modules\Core\Livewire\Dashboard;
 use Nwidart\Modules\Support\ModuleServiceProvider;
-use Illuminate\Console\Scheduling\Schedule;
 
 class CoreServiceProvider extends ModuleServiceProvider
 {
@@ -11,7 +12,14 @@ class CoreServiceProvider extends ModuleServiceProvider
     protected string $nameLower = 'core';
 
     protected array $providers = [
-        EventServiceProvider::class ,
-        RouteServiceProvider::class ,
+        EventServiceProvider::class,
+        RouteServiceProvider::class,
     ];
+
+    public function boot(): void
+    {
+        parent::boot();
+
+        Livewire::component('core::dashboard', Dashboard::class);
+    }
 }
